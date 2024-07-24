@@ -16,6 +16,9 @@
 		43FA9BD82C516468006DDC36 /* StudentsRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD72C516468006DDC36 /* StudentsRegistrationViewController.swift */; };
 		43FA9BDA2C51647A006DDC36 /* StudentsRegistrationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */; };
 		43FA9BDC2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BDB2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift */; };
+		43FA9BDE2C516D77006DDC36 /* RegistrationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BDD2C516D77006DDC36 /* RegistrationListCell.swift */; };
+		43FA9C082C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9C062C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld */; };
+		43FA9C0B2C51964C006DDC36 /* CoreDataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9C0A2C51964C006DDC36 /* CoreDataPersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		43FA9BD72C516468006DDC36 /* StudentsRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationViewController.swift; sourceTree = "<group>"; };
 		43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationListViewController.swift; sourceTree = "<group>"; };
 		43FA9BDB2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationUpdateViewController.swift; sourceTree = "<group>"; };
+		43FA9BDD2C516D77006DDC36 /* RegistrationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationListCell.swift; sourceTree = "<group>"; };
+		43FA9C072C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentsRegistrationCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		43FA9C0A2C51964C006DDC36 /* CoreDataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		433A453E2C505F370030CB9A /* Poc_Solid */ = {
 			isa = PBXGroup;
 			children = (
+				43FA9C092C519547006DDC36 /* Common */,
 				43FA9BD42C5162B7006DDC36 /* StudentsRegistrationMenu */,
 				43FA9BD32C5133EF006DDC36 /* StudentRegistration */,
 				43FA9BD22C5133E8006DDC36 /* StudentRegistrationList */,
@@ -71,6 +78,7 @@
 				433A45482C505F380030CB9A /* Assets.xcassets */,
 				433A454A2C505F380030CB9A /* LaunchScreen.storyboard */,
 				433A454D2C505F380030CB9A /* Info.plist */,
+				43FA9C062C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld */,
 			);
 			path = Poc_Solid;
 			sourceTree = "<group>";
@@ -87,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */,
+				43FA9BDD2C516D77006DDC36 /* RegistrationListCell.swift */,
 			);
 			path = StudentRegistrationList;
 			sourceTree = "<group>";
@@ -106,6 +115,14 @@
 				43FA9BD52C516454006DDC36 /* StudentsRegistrationMenuViewController.swift */,
 			);
 			path = StudentsRegistrationMenu;
+			sourceTree = "<group>";
+		};
+		43FA9C092C519547006DDC36 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				43FA9C0A2C51964C006DDC36 /* CoreDataPersistenceManager.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +201,10 @@
 				43FA9BDC2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift in Sources */,
 				433A45402C505F370030CB9A /* AppDelegate.swift in Sources */,
 				43FA9BD82C516468006DDC36 /* StudentsRegistrationViewController.swift in Sources */,
+				43FA9BDE2C516D77006DDC36 /* RegistrationListCell.swift in Sources */,
+				43FA9C0B2C51964C006DDC36 /* CoreDataPersistenceManager.swift in Sources */,
 				433A45422C505F370030CB9A /* SceneDelegate.swift in Sources */,
+				43FA9C082C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,9 +371,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "met.Poc-Solid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -379,9 +402,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "met.Poc-Solid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -407,6 +433,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		43FA9C062C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				43FA9C072C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 43FA9C072C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodel */;
+			path = StudentsRegistrationCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 433A45342C505F360030CB9A /* Project object */;
 }

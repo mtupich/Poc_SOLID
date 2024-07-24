@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -212,10 +213,34 @@
                     <view key="view" contentMode="scaleToFill" id="BYj-CQ-8DE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-B2-Eqc">
+                                <rect key="frame" x="24" y="152" width="345" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Students Registration List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc9-Lr-W9N">
+                                <rect key="frame" x="24" y="113" width="345" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IUq-xe-DRp"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IUq-xe-DRp" firstAttribute="trailing" secondItem="Nc9-Lr-W9N" secondAttribute="trailing" constant="24" id="1BU-rw-J4W"/>
+                            <constraint firstItem="Nc9-Lr-W9N" firstAttribute="leading" secondItem="IUq-xe-DRp" secondAttribute="leading" constant="24" id="8lL-O3-VMp"/>
+                            <constraint firstItem="IUq-xe-DRp" firstAttribute="trailing" secondItem="RwU-B2-Eqc" secondAttribute="trailing" constant="24" id="Aep-0D-gyE"/>
+                            <constraint firstItem="RwU-B2-Eqc" firstAttribute="top" secondItem="Nc9-Lr-W9N" secondAttribute="bottom" constant="15" id="DTS-ZF-CTf"/>
+                            <constraint firstItem="RwU-B2-Eqc" firstAttribute="leading" secondItem="IUq-xe-DRp" secondAttribute="leading" constant="24" id="DrI-QY-dHX"/>
+                            <constraint firstItem="IUq-xe-DRp" firstAttribute="bottom" secondItem="RwU-B2-Eqc" secondAttribute="bottom" id="ghf-F4-1xF"/>
+                            <constraint firstItem="Nc9-Lr-W9N" firstAttribute="top" secondItem="IUq-xe-DRp" secondAttribute="top" constant="10" id="tt1-Hs-Omj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9dQ-wo-mEA"/>
+                    <connections>
+                        <outlet property="tableView" destination="RwU-B2-Eqc" id="oov-Wi-TEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbC-gV-oDA" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,4 +281,9 @@
             <point key="canvasLocation" x="-1295" y="7"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
