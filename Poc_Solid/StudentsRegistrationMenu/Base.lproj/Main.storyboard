@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fep-TD-2fS">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -7,22 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Students Registration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Poc_Solid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StudentsRegistrationViewController" customModule="Poc_Solid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration Student Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwq-wg-eds">
-                                <rect key="frame" x="24" y="119" width="345" height="21"/>
+                                <rect key="frame" x="24" y="163" width="345" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62X-ms-R6B">
-                                <rect key="frame" x="34" y="169" width="325" height="549"/>
+                                <rect key="frame" x="34" y="213" width="325" height="505"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdL-dH-OWZ">
                                         <rect key="frame" x="36" y="59" width="190" height="34"/>
@@ -136,6 +136,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="62X-ms-R6B" secondAttribute="bottom" constant="100" id="pl9-mC-7TI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="W0e-B4-i6p"/>
                     <connections>
                         <outlet property="studentsEmail" destination="IC7-6e-3Rk" id="tAW-bS-1r3"/>
                         <outlet property="studentsGender" destination="bbR-bg-uLr" id="R41-pv-Oks"/>
@@ -146,7 +147,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="666" y="743"/>
+        </scene>
+        <!--Students Registration Menu View Controller-->
+        <scene sceneID="vpw-bX-pTj">
+            <objects>
+                <viewController id="BLi-vP-t9G" customClass="StudentsRegistrationMenuViewController" customModule="Poc_Solid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UwA-KH-IZX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vB-1r-Ras">
+                                <rect key="frame" x="48" y="203" width="297" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register Student"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="qay-HF-stI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGL-bo-lK2">
+                                <rect key="frame" x="48" y="272" width="297" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Students List"/>
+                                <connections>
+                                    <segue destination="86Y-5Z-8Lg" kind="show" id="RnQ-ud-Yon"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-gW-X9c">
+                                <rect key="frame" x="48" y="341" width="297" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KMT-re-tMG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Student Registration"/>
+                                <connections>
+                                    <segue destination="Cze-0o-yG0" kind="show" id="ved-nD-o0J"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jN6-aj-jGa"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jN6-aj-jGa" firstAttribute="trailing" secondItem="pGL-bo-lK2" secondAttribute="trailing" constant="48" id="3sX-ld-uR4"/>
+                            <constraint firstItem="6vB-1r-Ras" firstAttribute="top" secondItem="jN6-aj-jGa" secondAttribute="top" constant="100" id="7Ot-a2-uxK"/>
+                            <constraint firstItem="lnO-gW-X9c" firstAttribute="top" secondItem="pGL-bo-lK2" secondAttribute="bottom" constant="34" id="8rL-OF-2zw"/>
+                            <constraint firstItem="lnO-gW-X9c" firstAttribute="leading" secondItem="jN6-aj-jGa" secondAttribute="leading" constant="48" id="Gjt-mt-gC6"/>
+                            <constraint firstItem="pGL-bo-lK2" firstAttribute="top" secondItem="6vB-1r-Ras" secondAttribute="bottom" constant="34" id="NrS-M4-etc"/>
+                            <constraint firstItem="jN6-aj-jGa" firstAttribute="trailing" secondItem="6vB-1r-Ras" secondAttribute="trailing" constant="48" id="cBr-qX-bmt"/>
+                            <constraint firstItem="6vB-1r-Ras" firstAttribute="leading" secondItem="jN6-aj-jGa" secondAttribute="leading" constant="48" id="i4D-jg-77Q"/>
+                            <constraint firstItem="pGL-bo-lK2" firstAttribute="leading" secondItem="jN6-aj-jGa" secondAttribute="leading" constant="48" id="osW-uu-NyG"/>
+                            <constraint firstItem="jN6-aj-jGa" firstAttribute="trailing" secondItem="lnO-gW-X9c" secondAttribute="trailing" constant="48" id="v0n-c8-CS0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5y8-S2-2eh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FH-Hc-RhC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-312" y="7"/>
+        </scene>
+        <!--Students Registration List View Controller-->
+        <scene sceneID="BOd-kl-dPn">
+            <objects>
+                <viewController id="86Y-5Z-8Lg" customClass="StudentsRegistrationListViewController" customModule="Poc_Solid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYj-CQ-8DE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="IUq-xe-DRp"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9dQ-wo-mEA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JbC-gV-oDA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-289" y="743"/>
+        </scene>
+        <!--Students Registration Update View Controller-->
+        <scene sceneID="tSi-T0-kQa">
+            <objects>
+                <viewController id="Cze-0o-yG0" customClass="StudentsRegistrationUpdateViewController" customModule="Poc_Solid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XA7-Cd-Mev">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HiL-3T-GfK"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Trq-kz-kcP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saT-HU-J6P" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1294" y="743"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zp7-bH-unp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fep-TD-2fS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FhN-DH-dzl">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BLi-vP-t9G" kind="relationship" relationship="rootViewController" id="ieP-FC-bMd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZd-9l-JcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1295" y="7"/>
         </scene>
     </scenes>
 </document>
