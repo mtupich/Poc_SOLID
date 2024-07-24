@@ -56,6 +56,10 @@
 		433A453E2C505F370030CB9A /* Poc_Solid */ = {
 			isa = PBXGroup;
 			children = (
+				43FA9BD32C5133EF006DDC36 /* StudentRegistration */,
+				43FA9BD22C5133E8006DDC36 /* StudentRegistrationList */,
+				43FA9BD12C5133E5006DDC36 /* StudentRegistrationUpdate */,
+				43FA9BD02C5133E3006DDC36 /* StudentRegistrationRemoval */,
 				433A453F2C505F370030CB9A /* AppDelegate.swift */,
 				433A45412C505F370030CB9A /* SceneDelegate.swift */,
 				433A45432C505F370030CB9A /* ViewController.swift */,
@@ -65,6 +69,34 @@
 				433A454D2C505F380030CB9A /* Info.plist */,
 			);
 			path = Poc_Solid;
+			sourceTree = "<group>";
+		};
+		43FA9BD02C5133E3006DDC36 /* StudentRegistrationRemoval */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StudentRegistrationRemoval;
+			sourceTree = "<group>";
+		};
+		43FA9BD12C5133E5006DDC36 /* StudentRegistrationUpdate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StudentRegistrationUpdate;
+			sourceTree = "<group>";
+		};
+		43FA9BD22C5133E8006DDC36 /* StudentRegistrationList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StudentRegistrationList;
+			sourceTree = "<group>";
+		};
+		43FA9BD32C5133EF006DDC36 /* StudentRegistration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StudentRegistration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
