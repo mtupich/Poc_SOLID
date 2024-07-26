@@ -12,6 +12,7 @@
 		433A45472C505F370030CB9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433A45452C505F370030CB9A /* Main.storyboard */; };
 		433A45492C505F380030CB9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 433A45482C505F380030CB9A /* Assets.xcassets */; };
 		433A454C2C505F380030CB9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433A454A2C505F380030CB9A /* LaunchScreen.storyboard */; };
+		43425FE62C5415AC00C8F9BF /* StudentRegistrationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43425FE52C5415AC00C8F9BF /* StudentRegistrationDetailViewController.swift */; };
 		43FA9BD62C516454006DDC36 /* StudentsRegistrationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD52C516454006DDC36 /* StudentsRegistrationMenuViewController.swift */; };
 		43FA9BD82C516468006DDC36 /* StudentsRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD72C516468006DDC36 /* StudentsRegistrationViewController.swift */; };
 		43FA9BDA2C51647A006DDC36 /* StudentsRegistrationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */; };
@@ -29,6 +30,7 @@
 		433A45482C505F380030CB9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		433A454B2C505F380030CB9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		433A454D2C505F380030CB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43425FE52C5415AC00C8F9BF /* StudentRegistrationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegistrationDetailViewController.swift; sourceTree = "<group>"; };
 		43FA9BD52C516454006DDC36 /* StudentsRegistrationMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationMenuViewController.swift; sourceTree = "<group>"; };
 		43FA9BD72C516468006DDC36 /* StudentsRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationViewController.swift; sourceTree = "<group>"; };
 		43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationListViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = Poc_Solid;
 			sourceTree = "<group>";
 		};
+		43425FE02C54028100C8F9BF /* StudentRegistrationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				43425FE52C5415AC00C8F9BF /* StudentRegistrationDetailViewController.swift */,
+			);
+			path = StudentRegistrationDetail;
+			sourceTree = "<group>";
+		};
 		43FA9BD12C5133E5006DDC36 /* StudentRegistrationUpdate */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		43FA9BD22C5133E8006DDC36 /* StudentRegistrationList */ = {
 			isa = PBXGroup;
 			children = (
+				43425FE02C54028100C8F9BF /* StudentRegistrationDetail */,
 				43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */,
 				43FA9BDD2C516D77006DDC36 /* RegistrationListCell.swift */,
 			);
@@ -204,6 +215,7 @@
 				43FA9BDE2C516D77006DDC36 /* RegistrationListCell.swift in Sources */,
 				43FA9C0B2C51964C006DDC36 /* CoreDataPersistenceManager.swift in Sources */,
 				433A45422C505F370030CB9A /* SceneDelegate.swift in Sources */,
+				43425FE62C5415AC00C8F9BF /* StudentRegistrationDetailViewController.swift in Sources */,
 				43FA9C082C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

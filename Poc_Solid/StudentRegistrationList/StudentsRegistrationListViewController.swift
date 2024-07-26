@@ -39,4 +39,8 @@ extension StudentsRegistrationListViewController: UITableViewDataSource, UITable
         cell.setupName(name: student.studentName ?? "Unknown")
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "studentFormDetail", sender: nil)
+    }
 }

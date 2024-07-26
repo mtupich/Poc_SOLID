@@ -59,7 +59,15 @@ class StudentsRegistrationViewController: UIViewController {
             ])
             
             let alert = UIAlertController(title: "Sucesso", message: "Dados salvos com sucesso.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in 
+                DispatchQueue.main.async {
+                    self.studentsName.text = ""
+                    self.studentsGender.text = ""
+                    self.studentsEmail.text = ""
+                    self.studentsID.text = ""
+                    
+                }
+            }))
             present(alert, animated: true, completion: nil)
             
         } catch {
