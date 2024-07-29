@@ -174,27 +174,16 @@
                                     <segue destination="86Y-5Z-8Lg" kind="show" id="RnQ-ud-Yon"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-gW-X9c">
-                                <rect key="frame" x="48" y="341" width="297" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="KMT-re-tMG"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Student Registration"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jN6-aj-jGa"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jN6-aj-jGa" firstAttribute="trailing" secondItem="pGL-bo-lK2" secondAttribute="trailing" constant="48" id="3sX-ld-uR4"/>
                             <constraint firstItem="6vB-1r-Ras" firstAttribute="top" secondItem="jN6-aj-jGa" secondAttribute="top" constant="100" id="7Ot-a2-uxK"/>
-                            <constraint firstItem="lnO-gW-X9c" firstAttribute="top" secondItem="pGL-bo-lK2" secondAttribute="bottom" constant="34" id="8rL-OF-2zw"/>
-                            <constraint firstItem="lnO-gW-X9c" firstAttribute="leading" secondItem="jN6-aj-jGa" secondAttribute="leading" constant="48" id="Gjt-mt-gC6"/>
                             <constraint firstItem="pGL-bo-lK2" firstAttribute="top" secondItem="6vB-1r-Ras" secondAttribute="bottom" constant="34" id="NrS-M4-etc"/>
                             <constraint firstItem="jN6-aj-jGa" firstAttribute="trailing" secondItem="6vB-1r-Ras" secondAttribute="trailing" constant="48" id="cBr-qX-bmt"/>
                             <constraint firstItem="6vB-1r-Ras" firstAttribute="leading" secondItem="jN6-aj-jGa" secondAttribute="leading" constant="48" id="i4D-jg-77Q"/>
                             <constraint firstItem="pGL-bo-lK2" firstAttribute="leading" secondItem="jN6-aj-jGa" secondAttribute="leading" constant="48" id="osW-uu-NyG"/>
-                            <constraint firstItem="jN6-aj-jGa" firstAttribute="trailing" secondItem="lnO-gW-X9c" secondAttribute="trailing" constant="48" id="v0n-c8-CS0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5y8-S2-2eh"/>
@@ -325,6 +314,7 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Save"/>
                                         <connections>
                                             <action selector="didTapConfirm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uZM-Kz-Avl"/>
+                                            <action selector="didTapSave:" destination="Hco-e2-Twy" eventType="touchUpInside" id="hfy-gJ-4JV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqR-No-iK7">
@@ -334,6 +324,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delete Form"/>
+                                        <connections>
+                                            <action selector="didTapDelete:" destination="Hco-e2-Twy" eventType="touchUpInside" id="JCT-ci-HDb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -385,6 +378,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XOM-jB-50H"/>
+                    <connections>
+                        <outlet property="studentsEmail" destination="nhe-UO-pge" id="I7d-Ft-dki"/>
+                        <outlet property="studentsGender" destination="Oy6-f4-1Jp" id="VOE-VF-qpR"/>
+                        <outlet property="studentsID" destination="cVI-G1-s5T" id="KOb-e5-HuV"/>
+                        <outlet property="studentsName" destination="1ys-Lw-Fvs" id="DYT-7R-HPq"/>
+                        <outlet property="studentsView" destination="DWT-FV-m8r" id="vbj-Sr-Aaa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kul-CP-8cq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

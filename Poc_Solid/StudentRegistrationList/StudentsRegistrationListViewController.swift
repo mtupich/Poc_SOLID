@@ -26,6 +26,15 @@ class StudentsRegistrationListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "studentFormDetail" {
+            let controller = segue.destination as! StudentRegistrationDetailViewController
+            if let student = sender as? StudentModel {
+                controller.student = student
+            }
+        }
+    }
+    
 }
 
 extension StudentsRegistrationListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -41,6 +50,14 @@ extension StudentsRegistrationListViewController: UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "studentFormDetail", sender: nil)
+        let student = StudentModel(name: students[indexPath.row].studentName ?? "", gender: students[indexPath.row].studentGender ?? "", email: students[indexPath.row].studentEmail ?? "", Id: students[indexPath.row].studentId ?? "")
+        self.performSegue(withIdentifier: "studentFormDetail", sender: student)
     }
+}
+
+struct StudentModel {
+    let name: String
+    let gender: String
+    let email: String
+    let Id: String
 }
