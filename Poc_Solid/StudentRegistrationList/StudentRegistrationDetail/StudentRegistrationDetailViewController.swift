@@ -15,7 +15,7 @@ class StudentRegistrationDetailViewController: UIViewController {
     @IBOutlet weak var studentsEmail: UITextField!
     @IBOutlet weak var studentsID: UITextField!
     
-    var student: StudentModel?
+//    var student: StudentModel?
     var student2: Student?
 
         override func viewDidLoad() {
@@ -42,11 +42,12 @@ class StudentRegistrationDetailViewController: UIViewController {
     }
     
     func fillFields() {
-        guard let student = student else { return }
-        studentsName.text = student.name
-        studentsGender.text = student.gender
-        studentsEmail.text = student.email
-        studentsID.text = student.Id
+//        guard let student = student else { return }
+        guard let student = student2 else { return }
+        studentsName.text = student.studentName
+        studentsGender.text = student.studentGender
+        studentsEmail.text = student.studentEmail
+        studentsID.text = student.studentId
     }
     
     
@@ -57,27 +58,29 @@ class StudentRegistrationDetailViewController: UIViewController {
 
     @IBAction func didTapDelete(_ sender: UIButton) {
         let alert = UIAlertController(title: "Atenção", message: "Você quer mesmo deletar esse formulário?", preferredStyle: .alert)
-        
-        let confirmAction = UIAlertAction(title: "Deletar", style: .destructive) { (action) in
-            let persistenceManager = CoreDataPersistenceManager<Student>()
-            do {
-                guard let student2 = self.student2 else { return }
-                try persistenceManager.deleteObject(object: student2)
-                self.navigationController?.popViewController(animated: true)
-            } catch {
-                print("Erro ao deletar o objeto: \(error)")
-                let errorAlert = UIAlertController(title: "Erro", message: "Não foi possível deletar o registro. Tente novamente.", preferredStyle: .alert)
-                errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(errorAlert, animated: true, completion: nil)
-            }
-
-        }
-        alert.addAction(confirmAction)
-        
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
+           
+           let confirmAction = UIAlertAction(title: "Deletar", style: .destructive) { (action) in
+               let persistenceManager = CoreDataPersistenceManager<Student>()
+               do {
+                   guard let student2 = self.student2 else {
+                       print("Objeto para deletar não encontrado.")
+                       return
+                   }
+                   try persistenceManager.deleteObject(object: student2)
+                   self.navigationController?.popViewController(animated: true)
+               } catch {
+                   print("Erro ao deletar o objeto: \(error)")
+                   let errorAlert = UIAlertController(title: "Erro", message: "Não foi possível deletar o registro. Tente novamente.", preferredStyle: .alert)
+                   errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                   self.present(errorAlert, animated: true, completion: nil)
+               }
+           }
+           alert.addAction(confirmAction)
+           
+           let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+           alert.addAction(cancelAction)
+           
+           present(alert, animated: true, completion: nil)
     }
     
 }

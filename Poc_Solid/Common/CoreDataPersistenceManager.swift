@@ -36,7 +36,9 @@ class CoreDataPersistenceManager<T: NSManagedObject> {
     
     func deleteObject(object: T) throws {
         context.delete(object)
-        try context.save()
+        if context.hasChanges {
+            try context.save()
+        }
     }
     
     func updateObject(object: T, with properties: [String: Any]) throws {

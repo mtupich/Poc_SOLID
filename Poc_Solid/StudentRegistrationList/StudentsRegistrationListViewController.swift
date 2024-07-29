@@ -20,6 +20,11 @@ class StudentsRegistrationListViewController: UIViewController {
         tableView.register(RegistrationListCell.self, forCellReuseIdentifier: "registerCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     func loadStudentsFromCoreData() {
         let persistenceManager = CoreDataPersistenceManager<Student>()
         students = persistenceManager.getObjectList()
@@ -29,8 +34,8 @@ class StudentsRegistrationListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "studentFormDetail" {
             let controller = segue.destination as! StudentRegistrationDetailViewController
-            if let student = sender as? StudentModel {
-                controller.student = student
+            if let indexPath = tableView.indexPathForSelectedRow {
+                controller.student2 = students[indexPath.row]
             }
         }
     }
@@ -45,7 +50,8 @@ extension StudentsRegistrationListViewController: UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RegistrationListCell = tableView.dequeueReusableCell(withIdentifier: "registerCell", for: indexPath) as! RegistrationListCell
         let student = students[indexPath.row]
-        cell.setupName(name: student.studentName ?? "Unknown")
+        guard let studentName = student.studentName else { return UITableViewCell() }
+        cell.setupName(name: studentName)
         return cell
     }
     
