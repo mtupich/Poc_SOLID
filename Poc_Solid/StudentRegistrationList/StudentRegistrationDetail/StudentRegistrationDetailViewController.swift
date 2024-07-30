@@ -42,7 +42,6 @@ class StudentRegistrationDetailViewController: UIViewController {
     }
     
     func fillFields() {
-//        guard let student = student else { return }
         guard let student = student2 else { return }
         studentsName.text = student.studentName
         studentsGender.text = student.studentGender
@@ -52,7 +51,35 @@ class StudentRegistrationDetailViewController: UIViewController {
     
     
     @IBAction func didTapSave(_ sender: UIButton) {
+        guard let student2 = self.student2 else { return }
         
+        guard let updatedName = studentsName.text,
+              let updatedGender = studentsGender.text,
+              let updatedEmail = studentsEmail.text,
+              let updatedID = studentsID.text else {
+            let errorAlert = UIAlertController(title: "Erro", message: "Todos os campos são obrigatórios.", preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(errorAlert, animated: true, completion: nil)
+            return
+        }
+        
+        let updatedProperties: [String: Any] = [
+            "studentName": updatedName,
+            "studentGender": updatedGender,
+            "studentEmail": updatedEmail,
+            "studentId": updatedID
+        ]
+        
+        let persistenceManager = CoreDataPersistenceManager<Student>()
+        do {
+            try persistenceManager.updateObject(object: student2, with: updatedProperties)
+            self.navigationController?.popViewController(animated: true)
+        } catch {
+            print("Erro ao atualizar o objeto: \(error)")
+            let errorAlert = UIAlertController(title: "Erro", message: "Não foi possível atualizar o registro. Tente novamente.", preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(errorAlert, animated: true, completion: nil)
+        }
     }
     
 
