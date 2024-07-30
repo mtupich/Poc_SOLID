@@ -15,8 +15,7 @@ class StudentRegistrationDetailViewController: UIViewController {
     @IBOutlet weak var studentsEmail: UITextField!
     @IBOutlet weak var studentsID: UITextField!
     
-//    var student: StudentModel?
-    var student2: Student?
+    var student: Student?
 
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +41,7 @@ class StudentRegistrationDetailViewController: UIViewController {
     }
     
     func fillFields() {
-        guard let student = student2 else { return }
+        guard let student = student else { return }
         studentsName.text = student.studentName
         studentsGender.text = student.studentGender
         studentsEmail.text = student.studentEmail
@@ -51,7 +50,7 @@ class StudentRegistrationDetailViewController: UIViewController {
     
     
     @IBAction func didTapSave(_ sender: UIButton) {
-        guard let student2 = self.student2 else { return }
+        guard let student2 = self.student else { return }
         
         guard let updatedName = studentsName.text,
               let updatedGender = studentsGender.text,
@@ -89,7 +88,7 @@ class StudentRegistrationDetailViewController: UIViewController {
            let confirmAction = UIAlertAction(title: "Deletar", style: .destructive) { (action) in
                let persistenceManager = CoreDataPersistenceManager<Student>()
                do {
-                   guard let student2 = self.student2 else {
+                   guard let student2 = self.student else {
                        print("Objeto para deletar não encontrado.")
                        return
                    }

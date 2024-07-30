@@ -16,7 +16,6 @@
 		43FA9BD62C516454006DDC36 /* StudentsRegistrationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD52C516454006DDC36 /* StudentsRegistrationMenuViewController.swift */; };
 		43FA9BD82C516468006DDC36 /* StudentsRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD72C516468006DDC36 /* StudentsRegistrationViewController.swift */; };
 		43FA9BDA2C51647A006DDC36 /* StudentsRegistrationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */; };
-		43FA9BDC2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BDB2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift */; };
 		43FA9BDE2C516D77006DDC36 /* RegistrationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9BDD2C516D77006DDC36 /* RegistrationListCell.swift */; };
 		43FA9C082C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9C062C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodeld */; };
 		43FA9C0B2C51964C006DDC36 /* CoreDataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9C0A2C51964C006DDC36 /* CoreDataPersistenceManager.swift */; };
@@ -34,7 +33,6 @@
 		43FA9BD52C516454006DDC36 /* StudentsRegistrationMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationMenuViewController.swift; sourceTree = "<group>"; };
 		43FA9BD72C516468006DDC36 /* StudentsRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationViewController.swift; sourceTree = "<group>"; };
 		43FA9BD92C51647A006DDC36 /* StudentsRegistrationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationListViewController.swift; sourceTree = "<group>"; };
-		43FA9BDB2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsRegistrationUpdateViewController.swift; sourceTree = "<group>"; };
 		43FA9BDD2C516D77006DDC36 /* RegistrationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationListCell.swift; sourceTree = "<group>"; };
 		43FA9C072C517D5A006DDC36 /* StudentsRegistrationCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentsRegistrationCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		43FA9C0A2C51964C006DDC36 /* CoreDataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistenceManager.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 				43FA9BD42C5162B7006DDC36 /* StudentsRegistrationMenu */,
 				43FA9BD32C5133EF006DDC36 /* StudentRegistration */,
 				43FA9BD22C5133E8006DDC36 /* StudentRegistrationList */,
-				43FA9BD12C5133E5006DDC36 /* StudentRegistrationUpdate */,
 				433A453F2C505F370030CB9A /* AppDelegate.swift */,
 				433A45412C505F370030CB9A /* SceneDelegate.swift */,
 				433A45482C505F380030CB9A /* Assets.xcassets */,
@@ -91,14 +88,6 @@
 				43425FE52C5415AC00C8F9BF /* StudentRegistrationDetailViewController.swift */,
 			);
 			path = StudentRegistrationDetail;
-			sourceTree = "<group>";
-		};
-		43FA9BD12C5133E5006DDC36 /* StudentRegistrationUpdate */ = {
-			isa = PBXGroup;
-			children = (
-				43FA9BDB2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift */,
-			);
-			path = StudentRegistrationUpdate;
 			sourceTree = "<group>";
 		};
 		43FA9BD22C5133E8006DDC36 /* StudentRegistrationList */ = {
@@ -209,7 +198,6 @@
 			files = (
 				43FA9BD62C516454006DDC36 /* StudentsRegistrationMenuViewController.swift in Sources */,
 				43FA9BDA2C51647A006DDC36 /* StudentsRegistrationListViewController.swift in Sources */,
-				43FA9BDC2C51648A006DDC36 /* StudentsRegistrationUpdateViewController.swift in Sources */,
 				433A45402C505F370030CB9A /* AppDelegate.swift in Sources */,
 				43FA9BD82C516468006DDC36 /* StudentsRegistrationViewController.swift in Sources */,
 				43FA9BDE2C516D77006DDC36 /* RegistrationListCell.swift in Sources */,

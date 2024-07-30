@@ -35,7 +35,7 @@ class StudentsRegistrationListViewController: UIViewController {
         if segue.identifier == "studentFormDetail" {
             let controller = segue.destination as! StudentRegistrationDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                controller.student2 = students[indexPath.row]
+                controller.student = students[indexPath.row]
             }
         }
     }

@@ -21,6 +21,61 @@ class StudentsRegistrationViewController: UIViewController {
         setupUIAdditionalConfiguration()
     }
     
+    
+    @IBAction func didTapConfirm(_ sender: UIButton) {
+        if validateFields() {
+            saveStudentForm()
+        }
+    }
+    
+    func validateFields() -> Bool {
+        guard let name = studentsName.text, !name.isEmpty,
+              let gender = studentsGender.text, !gender.isEmpty,
+              let email = studentsEmail.text, !email.isEmpty,
+              let id = studentsID.text, !id.isEmpty
+        else {
+            showAlert(title: "Erro", messsage: "Todos os campos são obrigatórios.", titleBtn: "OK")
+            return false
+        }
+        return true
+    }
+    
+    func saveStudentForm() {
+        guard let name = studentsName.text, !name.isEmpty,
+              let gender = studentsGender.text, !gender.isEmpty,
+              let email = studentsEmail.text, !email.isEmpty,
+              let id = studentsID.text, !id.isEmpty else { return }
+        do {
+            try persistenceManager.saveObject(properties: [
+                "studentName": name,
+                "studentGender": gender,
+                "studentEmail": email,
+                "studentId": id
+            ])
+            cleanSavedData()
+            showAlert(title: "Sucesso", messsage: "Dados salvos com sucesso.", titleBtn: "OK")
+        } catch {
+            showAlert(title: "Erro", messsage: "Não foi possível salvar os dados.", titleBtn: "OK")
+        }
+    }
+    
+    func showAlert(title: String, messsage: String, titleBtn: String) {
+        let alert = UIAlertController(title: "Erro", message: "Todos os campos são obrigatórios.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+    }
+    
+    func cleanSavedData() {
+        DispatchQueue.main.async {
+            self.studentsName.text = ""
+            self.studentsGender.text = ""
+            self.studentsEmail.text = ""
+            self.studentsID.text = ""
+        }
+    }
+}
+
+extension StudentsRegistrationViewController {
     func setupUIAdditionalConfiguration() {
         studentsView.layer.cornerRadius = 10
         studentsView.layer.shadowColor = UIColor.black.cgColor
@@ -38,44 +93,4 @@ class StudentsRegistrationViewController: UIViewController {
         studentsID.layer.borderColor = UIColor.black.cgColor
     }
     
-    
-    @IBAction func didTapConfirm(_ sender: UIButton) {
-        guard let name = studentsName.text, !name.isEmpty,
-              let gender = studentsGender.text, !gender.isEmpty,
-              let email = studentsEmail.text, !email.isEmpty,
-              let id = studentsID.text, !id.isEmpty else {
-            let alert = UIAlertController(title: "Erro", message: "Todos os campos são obrigatórios.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            return
-        }
-                
-        do {
-            try persistenceManager.saveObject(properties: [
-                "studentName": name,
-                "studentGender": gender,
-                "studentEmail": email,
-                "studentId": id
-            ])
-            
-            let alert = UIAlertController(title: "Sucesso", message: "Dados salvos com sucesso.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in 
-                DispatchQueue.main.async {
-                    self.studentsName.text = ""
-                    self.studentsGender.text = ""
-                    self.studentsEmail.text = ""
-                    self.studentsID.text = ""
-                    
-                }
-            }))
-            present(alert, animated: true, completion: nil)
-            
-        } catch {
-            let alert = UIAlertController(title: "Erro", message: "Não foi possível salvar os dados.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
-        
-    }
 }
-
